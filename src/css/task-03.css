@@ -1,0 +1,10 @@
+.centered-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.galleryListItem:not(:first-child) {
+  margin-top: 15px;
+}

@@ -15,14 +15,17 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-const galleryListRef = document.querySelector('#gallery');
 
-images.forEach(image => galleryListRef.insertAdjacentHTML(
-    'afterbegin',
+const galleryListRef = document.querySelector('#gallery');
+const galleryListItem = [];
+
+images.forEach(image => galleryListItem.push(
     `<li class = 'galleryListItem'>
         <img class = 'galleryListItemImg' src = '${image.url}' alt = '${image.alt}' width = 500px height = 500px/>
     </li>`
 ));
+
+galleryListRef.insertAdjacentHTML('afterbegin', `${galleryListItem.join('')}`)
 
 const galleryListItemRef = document.querySelectorAll('.galleryListItem');
 galleryListRef.classList.add('centered-flex')
